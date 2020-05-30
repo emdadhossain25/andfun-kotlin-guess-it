@@ -55,20 +55,6 @@ class GameFragment : Fragment() {
         binding.gameViewModel = viewModel
         binding.setLifecycleOwner(this)
 
-//        binding.correctButton.setOnClickListener {
-//            viewModel.onCorrect()
-//        }
-//        binding.skipButton.setOnClickListener {
-//            viewModel.onSkip()
-//        }
-//        viewModel.score.observe(this, Observer { newscore ->
-//            binding.scoreText.text = newscore.toString()
-//        })
-//        viewModel.word.observe(this, Observer { newWord ->
-//            binding.wordText.text = newWord
-//
-//        })
-
         viewModel.eventGameFinished.observe(this, Observer { gameHasFinished ->
             if (gameHasFinished) {
                 gameFinished()
@@ -77,9 +63,9 @@ class GameFragment : Fragment() {
 
         })
 
-        viewModel.currentTime.observe(this, Observer { newTime ->
-            binding.timerText.text = DateUtils.formatElapsedTime(newTime)
-        })
+//        viewModel.currentTime.observe(this, Observer { newTime ->
+//            binding.timerText.text = DateUtils.formatElapsedTime(newTime)
+//        })
 
         return binding.root
 
